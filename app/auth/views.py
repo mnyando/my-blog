@@ -9,11 +9,11 @@ def signup():
 
 
 @auth.route("/login")
-def Login():
-    return  render_template("Login.html") 
+def login():
+    return  render_template("auth/login.html") 
 
 
 @auth.route("/logout")
-def Logout():
-    return render_template("Logout.html")
+def logout():
+    return render_template("auth/logout.html")
 
