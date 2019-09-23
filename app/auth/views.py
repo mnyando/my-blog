@@ -60,7 +60,9 @@ def login():
 
 @auth.route("/logout")
 def logout():
-    return render_template("auth/logout.html")
+    logout_user()
+    return redirect(url_for('main.index'))
+    
 
 
 
