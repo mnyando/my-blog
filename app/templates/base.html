@@ -12,9 +12,10 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lobster|Mansalva|Quicksand|Turret+Road&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body >
     <div class="hero-head">
         <nav class="navbar">
             <div class="container">
@@ -30,15 +31,16 @@
                         <a href="{{ url_for('main.profile') }}" class="navbar-item">
                             Profile
                         </a>
-                        <a href="{{ url_for('auth.logout') }}" class="navbar-item">
-                            Logout
-                        </a>
-
+                    
                         <a href="{{url_for('main.new_post')}}" class="nav-link">
                             New Post
                         </a>
 
-                        <a class="nav-link dropdown-toggle" style= 'margin-right:30px' data-toggle="dropdown"
+                        <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                <i class="fas fa-sign-out-alt"></i>Logout
+                        </a>
+
+                        <a class="nav-link " style= 'margin-right:30px' 
                         aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user"></i>&nbsp;<strong>{{current_user.username}}</strong> </a>
 
@@ -46,7 +48,7 @@
                         {% else %}
 
                         <a href="{{ url_for('auth.login') }}" class="navbar-item">
-                            Login
+                                <i class="fas fa-sign-in-alt "></i>&nbsp;Login
                         </a>
                         <a href="{{ url_for('auth.signup') }}" class="navbar-item">
                             Sign Up
