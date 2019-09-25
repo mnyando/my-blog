@@ -4,7 +4,7 @@
 Ndundiro Kamau
 
 ## Description
-Blog is a flask app that allows writers to write and post their opinions in a blog while allowing other users to read the blogs and comment on them.Additionally writers can access the comments written by users and delete them if not favourable.
+Blog is a flask app that allows writers to write and post their opinions in a blog while allowing other users to read the blogs and comment on them.Additionally writers can access the comments written by users and delete them if they find them insulting or degrading.
 
 ## Screenshot
 <img src="https://github.com/Ndundiro/my-blog/blob/master/My-blog.png" width="1000">
