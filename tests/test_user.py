@@ -1,21 +1,22 @@
 import unittest
 from app.models import User
 
-class UserModelTest(unittest.TestCase):
+class UserTest(unittest.TestCase):
 
     def setUp(self):
-        self.new_user = User(password = 'banana')
+        self.new_user = User(username="Ndundiro", email = "ndudndiro@proj.com", password="pass123")
+
 
     def test_password_setter(self):
         self.assertTrue(self.new_user.pass_secure is not None)
 
 
     def test_no_access_password(self):
-            with self.assertRaises(AttributeError):
-                self.new_user.password
+        with self.assertRaises(AttributeError):
+            self.new_user.password
 
     def test_password_verification(self):
-        self.assertTrue(self.new_user.verify_password('banana'))
+        self.assertTrue(self.new_user.verify_password("12345"))
 
 
 
@@ -28,7 +29,7 @@ from app.models import User
 class UserModelTest(unittest.TestCase):
     
     def setUp(self):
-        self.new_user = User(id = 3, username = 'audrey', email = 'audreynjiraini@gmail.com', password_hash = 'banana', profile_pic_path = 'default.jpeg', bio = 'Beyonce is the queen')
+        self.new_user = User(id = 1, username = "ndundiro", email = "ndundirokamau@gnail.com", password = "12345")
         
         
     def test_instance(self):
@@ -40,13 +41,10 @@ class UserModelTest(unittest.TestCase):
         
         
     def test_password_setter(self):
-        self.assertTrue(self.new_user.password_hash is not None)
+        self.assertTrue(self.new_user.password is not None)
         
-    def test_no_access_password(self): # confirms that our application raises an attribute error when we try and access the password property.
-        
-        with self.assertRaises(AttributeError):
-            self.new_user.password
+
             
-    def test_password_verification(self): # confirms that our password_hash can be verified when we pass in the correct password.
+    def test_password_verification(self): 
         
-        self.assertTrue(self.new_user.verify_password('banana'))
+        self.assertTrue(self.new_user.verify_password('12345'))

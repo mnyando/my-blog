@@ -12,11 +12,12 @@ class CommentModelTest(unittest.TestCase):
         Set up method that will run before every Test
         '''
         
-        self.new_comment = Comment(id = 3, comment = 'Testing', posted = 2019/9/23, user_id = 3, blog_id = 1)
+        self.new_comment = Comment(id = 2, comment = "Hope it works", posted = 2019/9/23, post_id = 1, user_id = 1)
         
         
     def tearDown(self):
         Comment.query.delete()
+        User.query.delete()
 
 
     def test_instance(self):
@@ -25,10 +26,10 @@ class CommentModelTest(unittest.TestCase):
         
     def test_check_instance_variables(self):
         self.assertEquals(self.new_comment.id,3)
-        self.assertEquals(self.new_comment.comment,'Testing')
+        self.assertEquals(self.new_comment.comment,"Hope it works")
         self.assertEquals(self.new_comment.posted,2019/9/23)
-        self.assertEquals(self.new_comment.user_id,3)
-        self.assertEquals(self.new_comment.blog_id,1)
+        self.assertEquals(self.new_comment.user_id,4)
+        self.assertEquals(self.new_comment.blog_id,2)
 
 
     def test_save_comment(self):
@@ -39,6 +40,6 @@ class CommentModelTest(unittest.TestCase):
     def test_get_comment_by_id(self):
 
         self.new_comment.save_comment()
-        got_comments = Comment.get_comments(3)
+        got_comments = Comment.get_comments(4)
         self.assertTrue(len(got_comments) == 1)
         
